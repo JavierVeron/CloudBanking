@@ -1,0 +1,88 @@
+Manual API de CloudBanking
+
+Obtener Saldo
+=============
+URL: http://localhost/coderhouse/homebanking/public/obtenerSaldo/id
+Método: GET
+Descripción: Obtiene el sado de un Usuario, donde "id" es un valor numérico. Devuelve un Array con 3 valores (peso, dólar y euro).
+Ejemplo: http://localhost/coderhouse/homebanking/public/obtenerSaldo/1
+(Obtiene el Saldo del Usuario 1)
+
+
+Obtener Balance
+===============
+URL: http://localhost/coderhouse/homebanking/public/obtenerBalance/id
+Método: GET
+Descripción: Obtiene los datos del Balance de un Usuario, donde "id" es un valor numérico.
+Ejemplo: http://localhost/coderhouse/homebanking/public/obtenerBalance/1
+(Obtiene el balance del Usuario 1)
+
+
+Obtener Servicios
+=================
+URL: http://localhost/coderhouse/homebanking/public/obtenerServicios
+Método: GET
+Descripción: Obtiene un Array de Servicios de Pago
+
+
+Pago de Servicios
+=================
+URL: http://localhost/coderhouse/homebanking/public/pagoDeServicio
+Método: POST
+Parámetros: nombre=NOMBRE DEL SERVICIO, importe=VALOR A PAGAR, id=ID DE USUARIO
+Descripción: Realiza el Pago del Servicio
+Ejemplo: http://localhost/coderhouse/homebanking/public/pagoDeServicios?nombre=Claro&importe=1200&id=1
+
+
+Comprar Acciones
+================
+URL: http://localhost/coderhouse/homebanking/public/comprarAcciones
+Método: POST
+Parámetros: moneda=TIPO DE MONEDA (1- DOLAR/2- EURO), acciones=CANTIDAD DE ACCIONES A COMPRAR, id=ID DE USUARIO
+Descripción: Realiza Compra de Acciones (Dólar o Euro)
+Ejemplo: http://localhost/coderhouse/homebanking/public/comprarAcciones?moneda=1&acciones=20&id=1
+
+
+Vender Acciones
+===============
+URL: http://localhost/coderhouse/homebanking/public/venderAcciones
+Método: POST
+Parámetros: moneda=TIPO DE MONEDA (1- DOLAR/2- EURO), acciones=CANTIDAD DE ACCIONES A COMPRAR, id=ID DE USUARIO
+Descripción: Realiza Venta de Acciones (Dólar o Euro)
+Ejemplo: http://localhost/coderhouse/homebanking/public/venderAcciones?moneda=1&acciones=20&id=1
+
+
+Obtener Usuario
+===============
+URL: http://localhost/coderhouse/homebanking/public/obtenerUsuario/id
+Método: GET
+Parámetros: id=ID DE USUARIO
+Descripción: Obtiene los Datos del Usuario
+Ejemplo: http://localhost/coderhouse/homebanking/public/obtenerUsuario/1
+
+
+Crear Usuario
+=============
+URL: http://localhost/coderhouse/homebanking/public/crearUsuario
+Método: POST
+Parámetros: nombre=NOMBRE DEL CLIENTE, email=EMAIL DEL CILENTE, password=CONTRASEÑA
+Descripción: Crear un Usuario
+Ejemplo: http://localhost/coderhouse/homebanking/public/crearUsuario?nombre=Javier Veron&email=javier.veron@gmail.com&password=123456
+
+
+Actualizar Usuario
+==================
+URL: http://localhost/coderhouse/homebanking/public/actualizarUsuario
+Método: PUT
+Parámetros: nombre=NOMBRE DEL CLIENTE, email=EMAIL DEL CILENTE, password=CONTRASEÑA, id=ID DE USUARIO
+Descripción: Actualizar Datos del Usuario. El parámetro password no es necesario, en caso de que exista el parámetro, reemplaza la contraseña actual.
+Ejemplo: http://localhost/coderhouse/homebanking/public/actualizarUsuario?nombre=Javier Veron&email=javier.veron@gmail.com&password=123456&id=1
+
+
+Eliminar Usuario
+================
+URL: http://localhost/coderhouse/homebanking/public/eliminarUsuario/id
+Método: DELETE
+Parámetros: id=ID DE USUARIO
+Descripción: Elminina un Usuario
+Ejemplo: http://localhost/coderhouse/homebanking/public/eliminarUsuario/1

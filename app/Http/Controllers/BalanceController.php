@@ -35,7 +35,7 @@ class BalanceController extends Controller
             return response()->json(['status' => 'error', 'message' => 'El Id de Usuario debe ser un valor numérico!']);
         }
 
-    	$balance = DB::select("SELECT * FROM balance WHERE UserId = " .$id);
+    	$balance = DB::select("SELECT * FROM balance WHERE UserId = " .$id ." ORDER BY id DESC");
 
     	return response()->json(['status' => 'ok', 'balance' => $balance]);
     }

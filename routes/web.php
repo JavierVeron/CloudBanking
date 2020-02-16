@@ -51,9 +51,9 @@ Route::post('/comprarAcciones', 'InvestmentController@comprarAccionesAPI');
 
 Route::post('/venderAcciones', 'InvestmentController@venderAccionesAPI');
 
-Route::post('/crearUsuario', 'UserController@crearUsuarioAPI');
-
 Route::get('/obtenerUsuario/{id}', 'UserController@obtenerUsuarioAPI');
+
+Route::post('/crearUsuario', 'UserController@crearUsuarioAPI');
 
 Route::put('/actualizarUsuario', 'UserController@actualizarUsuarioAPI');
 

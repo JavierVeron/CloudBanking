@@ -87,6 +87,12 @@ class InvestmentController extends Controller
     public function comprarAccionesAPI(Request $request) {
         $request->operacion = 'Comprar';
 
+        if ($request->moneda == "") {
+            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo Moneda!']);       
+        } elseif (!is_numeric($request->moneda)) {
+            return response()->json(['status' => 'error', 'message' => 'El campo Moneda debe ser un valor numérico!']);
+        }
+
         if ($request->moneda == 1) {
             $request->moneda = 'Dólar';
         } elseif ($request->moneda == 2) {
@@ -102,7 +108,7 @@ class InvestmentController extends Controller
         }
 
         if ($request->id == "") {
-            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo UserId!']);       
+            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo Id!']);       
         } elseif (!is_numeric($request->id)) {
             return response()->json(['status' => 'error', 'message' => 'El campo UserId debe ser un valor numérico!']);
         }
@@ -142,6 +148,12 @@ class InvestmentController extends Controller
     public function venderAccionesAPI(Request $request) {
         $request->operacion = 'Vender';
 
+        if ($request->moneda == "") {
+            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo Moneda!']);       
+        } elseif (!is_numeric($request->moneda)) {
+            return response()->json(['status' => 'error', 'message' => 'El campo Moneda debe ser un valor numérico!']);
+        }
+
         if ($request->moneda == 1) {
             $request->moneda = 'Dólar';
         } elseif ($request->moneda == 2) {
@@ -157,7 +169,7 @@ class InvestmentController extends Controller
         }
 
         if ($request->id == "") {
-            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo UserId!']);       
+            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo Id!']);       
         } elseif (!is_numeric($request->id)) {
             return response()->json(['status' => 'error', 'message' => 'El campo UserId debe ser un valor numérico!']);
         }

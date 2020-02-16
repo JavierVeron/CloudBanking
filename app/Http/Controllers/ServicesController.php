@@ -54,7 +54,7 @@ class ServicesController extends Controller
         }
 
         if ($request->id == "") {
-            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo UserId!']);       
+            return response()->json(['status' => 'error', 'message' => 'Debe completar el Campo Id!']);       
         } elseif (!is_numeric($request->id)) {
             return response()->json(['status' => 'error', 'message' => 'El campo UserId debe ser un valor numérico!']);
         }
